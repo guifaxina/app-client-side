@@ -52,7 +52,7 @@ export const Container = styled.section`
       box-sizing: border-box;
 
       &:first-child {
-        margin-top: 17%;
+        /* margin-top: 17%; */
       }
     }
 
