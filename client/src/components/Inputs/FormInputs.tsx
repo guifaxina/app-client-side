@@ -1,13 +1,18 @@
 
 const FormInputs = (props: any) => {
+  
+  const { label, errorMessage, onChange, id, ...inputProps} = props;
+  
   return (
+
     <div className="formInput">
-      {/* <label>Username</label> */}
+      <label>{label}</label>
       <input 
       type="text" 
-      name={props.name}
-      placeholder={props.placeholder} 
+      {...inputProps}
+      onChange={onChange}
       />
+      <span>{errorMessage}</span>
     </div>
   )
 }

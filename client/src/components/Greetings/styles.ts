@@ -35,6 +35,7 @@ export const Container = styled.section`
   }
 
   .form {
+    padding-top: 3.5rem;
     position: absolute;
     right: 0;
     width: 60vw;
@@ -43,17 +44,25 @@ export const Container = styled.section`
     text-align: center;
 
     input, button {
-      width: 52%;
+      width: 51%;
       padding: 0.75rem 1.25rem;
       margin: 0.5rem 0;
-      display: inline-block;
       border: 1px solid #ccc;
       border-radius: 0.25rem;
       box-sizing: border-box;
+    }
 
-      &:first-child {
-        /* margin-top: 17%; */
-      }
+    input {
+      margin-top: 1.3rem;
+      margin-bottom: 0.75rem;
+    }
+
+    label {
+      position: absolute;
+      font-size: 0.9rem;
+      color: var(--blue);
+      font-weight: 500;
+      margin-left: 0.3rem;
     }
 
     button {
@@ -73,7 +82,6 @@ export const Container = styled.section`
         color: var(--light-blue);
 
         &:hover {
-          transition: 0.3s;
           filter: brightness(95%);
         }
       }
