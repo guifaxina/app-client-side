@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom'
 import FormInputs from "../Inputs/FormInputs";
 import { Container } from "./styles";
 
@@ -67,14 +68,17 @@ export function Greetings() {
     },
   ]
 
-  const handleSubmit = (e: any) => {
+  let navigate = useNavigate()
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = new FormData(e.target);
+    const data = new FormData(e.currentTarget);
     const userData = Object.fromEntries(data.entries())
     axios.post("http://localhost:3001/user/register", userData)
+    navigate('/after-login')
   };
 
-  const onChange = (e: any) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValues({...values, [e.target.name]: e.target.value})
   }
 
