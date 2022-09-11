@@ -2,10 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import FormInputs from "../Inputs/FormInputs";
+import SignIn from "../SignIn/SignIn";
 import { Container } from "./styles";
 
 
 export function Greetings() {
+
+
   const [ values, setValues ] = useState<{ [key: string]: string }>({
     name: "",
     lastName: "",
@@ -103,8 +106,8 @@ export function Greetings() {
               />
               )
             })}
-            <button>Create an account</button>
-            <button className="btn-sign-in">Sign in</button> 
+            <button type="submit">Create an account</button>
+            <SignIn />
         </form>
       </div>
     </Container>

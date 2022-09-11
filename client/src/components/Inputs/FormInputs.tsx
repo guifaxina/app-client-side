@@ -12,7 +12,6 @@ const FormInputs = (props: any) => {
       {...inputProps}
       onChange={onChange}
       />
-      <span>{errorMessage}</span>
     </div>
   )
 }

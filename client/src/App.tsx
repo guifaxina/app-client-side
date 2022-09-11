@@ -1,7 +1,7 @@
 import { Dashboard } from "./components/Dashboard/Dashboard";
 import { GlobalStyle } from "./styles/global";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AfterLogin from "./pages/AfterLoginTest/AfterLogin";
+import AfterLogin from "./pages/ProductsPage/Products";
 import NotFound from "./pages/NotFound/NotFound";
 
 function App() {

@@ -74,17 +74,11 @@ export const Container = styled.section`
       transition: 0.3s;
 
       &:hover {
-        opacity: 0.80;
-      }
-
-      &:last-child {
-        background: var(--shape);
-        color: var(--light-blue);
-
-        &:hover {
-          filter: brightness(95%);
-        }
+        background: #042EE5
       }
     }
+
   }
+
+  
 `;
