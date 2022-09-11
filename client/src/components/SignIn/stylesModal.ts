@@ -26,7 +26,6 @@ export const ContainerModal = styled.form`
   button {
     width: 70%;
     padding: 0.8rem;
-    /* height: 3rem; */
     font-size: 1.2rem;
     border-radius: 0.25rem;
     border: none;
@@ -34,6 +33,11 @@ export const ContainerModal = styled.form`
     background: var(--light-blue);
     color: white;
     font-weight: 600;
-    margin-top: 0.5rem
+    margin-top: 0.5rem;
+    transition: 0.3s;
+
+    &:hover{
+      background: #042EE5;
+    }
   }
 `;

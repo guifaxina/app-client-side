@@ -12,11 +12,12 @@ function SignIn() {
   });
 
   function onChange(e: React.ChangeEvent<HTMLInputElement>) {
-    
+    setUserLogin({...userLogin, [e.target.type]: e.target.value})
   }
 
-  function handleLoginSubmit() {
-    axios.post("http://localhost:3001/user/login");
+  async function handleLoginSubmit() {
+    await axios.post("http://localhost:3001/user/login");
+    
   }
 
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
