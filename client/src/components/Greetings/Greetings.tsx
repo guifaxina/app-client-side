@@ -94,22 +94,23 @@ export function Greetings() {
         </h2>
       </div>
 
-      <div>
-        <form className="form" onSubmit={handleSubmit}>   
-            {inputs.map((input) => {
-              return (
-              <FormInputs
-                key={input.id}
-                onChange={onChange}
-                {...input}
-                value={values[input.name]}
-              />
-              )
-            })}
-            <button type="submit">Create an account</button>
-            <SignIn />
-        </form>
-      </div>
+        <div className="right-div">
+          <form className="form" onSubmit={handleSubmit}>   
+              {inputs.map((input) => {
+                return (
+                <FormInputs
+                  key={input.id}
+                  onChange={onChange}
+                  {...input}
+                  value={values[input.name]}
+                />
+                )
+              })}
+              <button type="submit">Create an account</button>
+          </form>
+          <SignIn/>
+        </div>
+
     </Container>
   );
 }

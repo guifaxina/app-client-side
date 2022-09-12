@@ -34,7 +34,7 @@ export const Container = styled.section`
     }
   }
 
-  .form {
+  .right-div {
     padding-top: 3.5rem;
     position: absolute;
     right: 0;
@@ -42,7 +42,9 @@ export const Container = styled.section`
     height: 100vh;
     background: var(--background);
     text-align: center;
+  }
 
+  .form {
     input, button {
       width: 51%;
       padding: 0.75rem 1.25rem;
@@ -77,7 +79,6 @@ export const Container = styled.section`
         background: #042EE5
       }
     }
-
   }
 
   
