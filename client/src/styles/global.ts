@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   :root{
-    --background: #F5F5F5;
+    --background: #F1F1F1;
     --blue: #0433FF;
     --shape: #FFFFFF;
     --light-blue: #0433FF;
@@ -16,6 +16,10 @@ export const GlobalStyle = createGlobalStyle`
     body, input, textarea, button {
       font-family: 'Inter', sans-serif;
       font-weight: 400;
+    }
+
+    body {
+      background-color: var(--background);
     }
 }
 

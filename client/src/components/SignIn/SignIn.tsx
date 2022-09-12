@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container } from "./styles";
 import Modal from "react-modal";
@@ -6,26 +6,26 @@ import { ContainerModal } from "./stylesModal";
 import axios from "axios";
 
 function SignIn() {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
-  
   const [userLogin, setUserLogin] = useState({
     email: "",
     password: "",
   });
 
   function onChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setUserLogin({...userLogin, [e.target.type]: e.target.value})
+    setUserLogin({ ...userLogin, [e.target.type]: e.target.value });
   }
 
-  async function handleLoginSubmit(e: any) {
-    e.preventDefault()
-    await axios.post("http://localhost:3001/user/login", userLogin)
-    .then(res => {
-      if (res.status == 200) {
-        navigate('/home')
-      }
-    })
+  async function handleLoginSubmit(e: FormEvent<HTMLButtonElement>) {
+    e.preventDefault();
+    await axios
+      .post("http://localhost:3001/user/login", userLogin)
+      .then((res) => {
+        if (res.status == 200) {
+          navigate("/home");
+        }
+      });
   }
 
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
@@ -56,8 +56,8 @@ function SignIn() {
             placeholder="Enter your email"
             onChange={onChange}
           />
-          <input type="password" placeholder="Password" onChange={onChange}/>
-          <button type="submit" onClick={handleLoginSubmit}>
+          <input type="password" placeholder="Password" onChange={onChange} />
+          <button type="submit" onSubmit={handleLoginSubmit}>
             Login
           </button>
         </ContainerModal>
