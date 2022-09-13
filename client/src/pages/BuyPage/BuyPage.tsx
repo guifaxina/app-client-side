@@ -6,7 +6,7 @@ function BuyPage() {
   return (
     <> 
       <HeaderProducts />
-      <ListProducts />
+      <ListProducts title='Chocolate garoto 80% leite super delicioso 150g' price={6.99} inventory={635}/>
     </>
   )
 }

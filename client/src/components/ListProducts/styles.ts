@@ -11,6 +11,7 @@ export const Container = styled.div`
 
 export const Card = styled.div`
 
+  margin-left: 1.7rem;
   margin-top: 3rem;
   width: 14.5rem;
   height: 24.5rem;

@@ -5,6 +5,7 @@ import BuyPage from '../src/pages/BuyPage/BuyPage'
 import NotFound from "./pages/NotFound/NotFound";
 import Modal from 'react-modal'
 
+
 function App() {
   Modal.setAppElement('#root')
 
