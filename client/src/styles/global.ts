@@ -45,5 +45,25 @@ export const GlobalStyle = createGlobalStyle`
     border-radius: 0.25rem
   }
 
-  
+  .react-modal-overlay-add-product {
+    background: rgba(0, 0, 0, 0.6); 
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .react-modal-content-add-product {  
+    width: 30%;
+    max-width: 576;
+    background-color: var(--background);
+    padding: 3rem;
+    position: relative;
+    border-radius: 0.25rem
+  }  
 `;

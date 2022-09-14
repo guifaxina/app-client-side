@@ -26,7 +26,7 @@ function SignIn() {
           localStorage.setItem("name", res.headers.name);
           localStorage.setItem("isadmin", res.headers.isadmin);
           localStorage.setItem("token", res.headers.authorization);
-          navigate("/home");
+          navigate("/products");
         }
       });
   }

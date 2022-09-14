@@ -1,26 +1,26 @@
-import React from 'react'
-import { Card, Container } from './styles'
+import React from "react";
+import { Card, Container } from "../../pages/BuyPage/styles";
 
 type CardProps = {
-  title: string
-  price: number
-  inventory: number
-  isInventoryLow?: number
-}
+  name: string;
+  price: number;
+  inventory: number;
+  isInventoryLow?: number;
+  link?: string;
+};
 
 function ListProducts(props: CardProps) {
   return (
-      <Container>
-        <Card>
-          <div className='img-wrapper'><img src="https://www.drogariaminasbrasil.com.br/media/catalog/product/7/1/71569_1.jpg" alt="" className='img'/></div>
-          <h3>{props.title}</h3>
-          <span className='price'>R$ {props.price}</span>
-          <span className='inventory'>{props.inventory} available</span>
-          <span className='low-inventory'></span>
-        </Card>
-        
-      </Container> 
-  )
+    <Card>
+      <div className="img-wrapper">
+        <img src={props.link} alt="" className="img" />
+      </div>
+      <h3>{props.name}</h3>
+      <span className="price">R$ {props.price}</span>
+      <span className="inventory">{props.inventory} available</span>
+      <span className="low-inventory"></span>
+    </Card>
+  );
 }
 
-export default ListProducts
+export default ListProducts;

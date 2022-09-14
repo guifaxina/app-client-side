@@ -1,14 +1,51 @@
-import React from 'react'
-import HeaderProducts from '../../components/HeaderProducts/HeaderProducts'
-import ListProducts from '../../components/ListProducts/ListProducts'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import HeaderProducts from "../../components/HeaderProducts/HeaderProducts";
+import ListProducts from "../../components/ListProducts/ListProducts";
+import { Container } from './styles'
 
 function BuyPage() {
+
+  type ProductType = {
+    id: string
+    name: string
+    price: number
+    inventory: number
+    isInventoryLow?: number
+    link?: string
+  }
+
+  const [ productsList, setProductsList ] = useState([]);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      await axios
+        .get("http://localhost:3001/user/get-products")
+        .then(res => setProductsList(res.data))
+    };
+    
+    getProducts();
+
+  }, []);
+
   return (
-    <> 
+    <>
       <HeaderProducts />
-      <ListProducts title='Chocolate garoto 80% leite super delicioso 150g' price={6.99} inventory={635}/>
+      <Container>
+        {productsList.map((product: ProductType) => {
+          return (
+            <ListProducts 
+            link={product.link}
+            name={product.name}
+            price={product.price}
+            inventory={product.inventory}
+            key={product.id}
+            />
+          );
+        })}
+      </Container>
     </>
-  )
+  );
 }
 
-export default BuyPage
+export default BuyPage;

@@ -75,7 +75,7 @@ export function Greetings() {
     const data = new FormData(e.currentTarget);
     const userData = Object.fromEntries(data.entries());
     await axios.post("http://localhost:3001/user/register", userData);
-    navigate("/home");
+    navigate("/products");
   };
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
