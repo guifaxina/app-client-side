@@ -40,6 +40,7 @@ function BuyPage() {
             price={product.price}
             inventory={product.inventory}
             key={product.id}
+            id={product.id}
             />
           );
         })}

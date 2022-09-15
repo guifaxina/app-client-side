@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Card = styled.div`
 
+  position: relative;
   margin-left: 1.7rem;
   margin-top: 3rem;
   width: 14.5rem;
@@ -12,7 +13,7 @@ export const Card = styled.div`
 
   .img-wrapper {
     text-align: center;
-    height: 55%;
+    height: 50%;
     display: block;
   }
 
@@ -35,9 +36,16 @@ export const Card = styled.div`
   }
 
   .img {
-    margin-top: 1.2rem;
+    margin-top: 2.8rem;
     margin-bottom: 1.2rem;
     max-width: 13rem;
     max-height: 13rem;
+  }
+
+  .delete-icon {
+    margin-top: 0.7rem; 
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
   }
 `;
