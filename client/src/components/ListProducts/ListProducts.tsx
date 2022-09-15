@@ -2,6 +2,7 @@ import React from "react";
 import { Card } from "./styles";
 import DeleteIcon from '@mui/icons-material/Delete';
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 type CardProps = {
   name: string;
@@ -15,8 +16,8 @@ type CardProps = {
 
 
 function ListProducts(props: CardProps) {
+  const navigate = useNavigate()
   const isAdmin = localStorage.getItem('isadmin')
-
   const token = localStorage.getItem('token');
 
   async function handleDeleteAction(id: string) {
@@ -26,8 +27,14 @@ function ListProducts(props: CardProps) {
     window.location.reload()
   }
 
+  function handleProductPage() {
+    navigate('/buy-page')
+  }
+
   return (
-    <Card>
+    <Card
+    onClick={handleProductPage}
+    >
       {isAdmin == 'true' && 
       <DeleteIcon 
       color='error'

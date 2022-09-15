@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-
+  
+  cursor: pointer;
   position: relative;
   margin-left: 1.7rem;
   margin-top: 3rem;
@@ -36,10 +37,11 @@ export const Card = styled.div`
   }
 
   .img {
+    display: block;
     margin-top: 2.8rem;
     margin-bottom: 1.2rem;
     max-width: 13rem;
-    max-height: 13rem;
+    max-height: 12rem;
   }
 
   .delete-icon {
