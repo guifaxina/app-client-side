@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Container } from "../../pages/BuyPage/styles";
+import { Card } from "./styles";
 
 type CardProps = {
   name: string;

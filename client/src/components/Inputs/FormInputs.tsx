@@ -1,7 +1,7 @@
 
 const FormInputs = (props: any) => {
   
-  const { label, errorMessage, onChange, id, ...inputProps} = props;
+  const { label, onChange, id, ...inputProps} = props;
   
   return (
 
