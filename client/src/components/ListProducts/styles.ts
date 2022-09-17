@@ -7,7 +7,7 @@ export const Card = styled.div`
   margin-left: 1.7rem;
   margin-top: 3rem;
   width: 14.5rem;
-  height: 24.5rem;
+  height: 26.5rem;
   background: white;
   border-radius: 1rem;
   box-shadow: 1px 1px 6px 1px gray;
@@ -36,6 +36,18 @@ export const Card = styled.div`
     padding: 3px;
   }
 
+  .low-inventory {
+    font-weight: 600;
+    margin-left: 0.6rem;
+    margin-top: 0.75rem;
+    display: block;
+    width: 8.5rem;
+    color: red;
+    border: 2px solid red;
+    padding: 3px;
+    opacity: 65%;
+  }
+
   .img {
     display: block;
     margin-top: 2.8rem;
@@ -49,5 +61,9 @@ export const Card = styled.div`
     position: absolute;
     right: 5%;
     cursor: pointer;
+  }
+
+  .priority-icon{
+    
   }
 `;
