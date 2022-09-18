@@ -42,6 +42,10 @@ export const Content = styled.div`
         background: #516EFF;
       }
     }
+
+    h3, .price {
+      color: black;
+    }
 `;
 
 export const ContainerModal = styled.form`

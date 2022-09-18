@@ -28,12 +28,12 @@ function ListProducts(props: CardProps) {
     window.location.reload();
   }
 
-  function handleProductPage() {
-    navigate("/buy-page");
+  function handleProductPage(id: string) {
+    navigate("/buy-page", {state: { id: id }});
   }
 
   return (
-    <Card onClick={handleProductPage}>
+    <Card onClick={() => handleProductPage(props.id)}>
       {isAdmin == "true" && (
         <DeleteIcon
           color="error"
