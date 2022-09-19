@@ -18,6 +18,7 @@ export const Container = styled.div`
   img {
     display: inline;
     width: 30rem;
+    max-height: 25rem;
   }
 
   h2 {
