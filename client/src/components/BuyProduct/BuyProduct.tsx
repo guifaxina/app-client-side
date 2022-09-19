@@ -1,11 +1,23 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { Container } from "./styles";
 
 export default function BuyProduct(props: any) {
 
-  function handleBuyAction() {
-    
+  const [ units, setUnits ] = useState({
+    id: props.id,
+    units: 0
+  })
+
+  function handleUnits(e: any) {
+    setUnits({...units, [e.target.name]: e.target.value})
+    console.log(units);
   }
+
+  function handleBuyAction() {
+    axios.patch('http://localhost:3001/user/buy', units)
+
+  } 
 
   return (
     <Container>
@@ -17,7 +29,7 @@ export default function BuyProduct(props: any) {
         <h3>R$ {props.price}</h3>
         <p>Available Quantity: {props.inventory}</p>
         <label htmlFor="">Quantity:</label>
-        <input type="number" className="select-units" placeholder="Units" />
+        <input type="number" className="select-units" name="units" placeholder="Units" min={1} max={props.inventory} onChange={handleUnits}/>
         <button className="buy-button" onClick={handleBuyAction}>BUY NOW</button>
       </div>
     </Container>

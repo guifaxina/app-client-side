@@ -45,6 +45,7 @@ export const Container = styled.div`
     background: var(--blue);
     color: white;
     font-weight: 600;
+    cursor: pointer;
   }
 
   .buy-div {
@@ -57,7 +58,7 @@ export const Container = styled.div`
     margin: 0 auto;
     width: 20rem;
     padding: 1rem;
-    margin-bottom: 5rem;
+    margin-bottom: 15rem;
     
     label {
       color: #373737
