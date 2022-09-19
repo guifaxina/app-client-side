@@ -1,5 +1,5 @@
 import { Container, ContainerModal, Content } from "./styles";
-import { ReactEventHandler, useState } from "react";
+import { useState } from "react";
 import Modal from "react-modal";
 import axios from "axios";
 

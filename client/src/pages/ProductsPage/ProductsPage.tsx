@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import HeaderProducts from "../../components/HeaderProducts/HeaderProducts";
 import ListProducts from "../../components/ListProducts/ListProducts";
 import { Container } from './styles'

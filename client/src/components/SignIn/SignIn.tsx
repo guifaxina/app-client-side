@@ -15,7 +15,6 @@ function SignIn() {
 
   function onChange(e: React.ChangeEvent<HTMLInputElement>) {
     setUserLogin({ ...userLogin, [e.target.type]: e.target.value });
-    console.log(userLogin);
   }
 
   async function handleLoginSubmit(e: FormEvent<HTMLButtonElement>) {

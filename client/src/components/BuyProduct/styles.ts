@@ -75,3 +75,29 @@ export const Container = styled.div`
     margin-bottom: 2.5rem
   }
 `;
+
+export const ContainerModal = styled.div`
+
+  text-align: center;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    margin-bottom: 3rem;
+    color: #373737;
+  }
+  
+  .go-back-btn {
+    background: var(--blue);
+    border-radius: 0.25rem; 
+    height: 2.5rem;
+    width: 60%;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+   
+  }
+`;

@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Card } from "./styles";
 import DeleteIcon from "@mui/icons-material/Delete";
 import PriorityHighIcon from "@mui/icons-material/PriorityHigh";

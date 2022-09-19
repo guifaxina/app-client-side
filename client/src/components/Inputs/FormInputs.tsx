@@ -1,6 +1,5 @@
 
-const FormInputs = (props: any) => {
-  
+const FormInputs = (props) => {
   const { label, onChange, id, ...inputProps} = props;
   
   return (
