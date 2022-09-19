@@ -46,6 +46,7 @@ export const Content = styled.div`
     h3, .price {
       color: black;
     }
+
 `;
 
 export const ContainerModal = styled.form`

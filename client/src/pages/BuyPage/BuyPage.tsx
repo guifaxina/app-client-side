@@ -4,6 +4,7 @@ import ListProducts from "../../components/ListProducts/ListProducts";
 import { StyledDiv } from "./styles";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import BuyProduct from "../../components/BuyProduct/BuyProduct";
 
 function BuyPage() {
   
@@ -29,11 +30,15 @@ function BuyPage() {
   }, []);
 
   return (
+    <>
     <Container>
       <Content>
-        {postData.map((post: ProductData) => {
+        <h1>Arketfy</h1>
+      </Content>
+    </Container>
+    {postData.map((post: ProductData) => {
           return (
-            <ListProducts
+            <BuyProduct
               name={post.name}
               price={post.price}
               inventory={post.inventory}
@@ -43,8 +48,7 @@ function BuyPage() {
             />
           );
         })}
-      </Content>
-    </Container>
+    </>
   );
 }
 

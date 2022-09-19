@@ -54,6 +54,8 @@ export const Card = styled.div`
     margin-bottom: 1.2rem;
     max-width: 13rem;
     max-height: 12rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .delete-icon {
