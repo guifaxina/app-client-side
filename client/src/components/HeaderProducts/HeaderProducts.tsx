@@ -1,15 +1,12 @@
 import { Container, ContainerModal, Content } from "./styles";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "react-modal";
 import axios from "axios";
 
 export function HeaderProducts() {
   const token = localStorage.getItem("token");
-  const isAdmin = localStorage.getItem("isadmin");
-  const name = localStorage.getItem("name");
 
-  const [isAddNewProductModalOpen, setIsAddNewProductModalOpen] =
-    useState(false);
+  const [isAddNewProductModalOpen, setIsAddNewProductModalOpen] = useState(false);
 
   const [userDataAddNewProduct, setUserDataAddNewProduct] = useState({
     name: "",
@@ -39,20 +36,34 @@ export function HeaderProducts() {
       userDataAddNewProduct,
       {
         headers: {
-          "authorization": `${token}`
+          authorization: `${token}`,
         },
       }
     );
   }
 
+  const [ userData, setUserData ] = useState({
+    id: "",
+    admin: false,
+    name: "",
+  })
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/user/user-data", {
+      headers: {
+        authorization: `${token}`,
+      },
+    }).then(res => setUserData(res.data))
+  }, []);
+
   return (
     <Container>
       <Content>
         <span className="logo">Arketfy</span>
-        {isAdmin === "true" && (
+        {userData.admin == true && (
           <button onClick={handleAddNewProductModal}>add products</button>
         )}
-        <span className="hello">hello, {name}</span>
+        <span className="hello">hello, {userData.name}</span>
         <Modal
           isOpen={isAddNewProductModalOpen}
           onRequestClose={handleCloseNewProductModal}

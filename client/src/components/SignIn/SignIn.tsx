@@ -23,8 +23,6 @@ function SignIn() {
       .post("http://localhost:3001/user/login", userLogin)
       .then((res) => {
         if (res.status == 200) {
-          localStorage.setItem("name", res.headers.name);
-          localStorage.setItem("isadmin", res.headers.isadmin);
           localStorage.setItem("token", res.headers.authorization);
           navigate("/products");
         }
