@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Content } from "../../components/HeaderProducts/styles";
-import { useLocation } from "react-router-dom";
+import { Location, useLocation } from "react-router-dom";
 import axios from "axios";
 import BuyProduct from "../../components/BuyProduct/BuyProduct";
 
@@ -13,14 +13,21 @@ function BuyPage() {
     id: string;
   };
 
+  interface CustomizedState {
+    id: string
+  }
+
   const location = useLocation();
   const [postData, setPostData] = useState([]);
 
   useEffect(() => {
+    const state = location.state as CustomizedState
+    const { id } = state
+
     axios
       .get("http://localhost:3001/user/select-product", {
         headers: {
-          id: `${location.state.id}`,
+          id: `${id}`,
         },
       })
       .then((res) => setPostData(res.data));
