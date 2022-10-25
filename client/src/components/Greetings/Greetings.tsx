@@ -74,8 +74,13 @@ export function Greetings() {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const userData = Object.fromEntries(data.entries());
-    await axios.post("http://localhost:3001/user/register", userData);
-    navigate("/products");
+    
+    await axios.post("http://localhost:3001/user/register", userData).then(res => {
+      if (res.status == 200) {
+        localStorage.setItem("token", res.headers.authorization);
+        navigate("/products");
+      }
+    });
   };
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -100,7 +105,7 @@ export function Greetings() {
                 onChange={onChange}
                 {...input}
                 value={values[input.name]}
-              />
+              /> 
             );
           })}
           <button type="submit">Create an account</button>

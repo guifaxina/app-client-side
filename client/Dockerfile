@@ -1,13 +1,15 @@
 FROM node:16
 
-WORKDIR /app
+WORKDIR /client
 
-ENV PATH /app/node_modules/.bin:$PATH
-
-COPY package.json .
+COPY package*.json ./
 
 RUN npm install
 
-EXPOSE 5173
+COPY . .
 
-CMD [ "npm","run","build" ]
+RUN npm run build
+
+EXPOSE 4173
+
+CMD [ "npm","run","preview"]

@@ -25,7 +25,7 @@ function SignIn() {
         if (res.status == 200) {
           localStorage.setItem("token", res.headers.authorization);
           navigate("/products");
-        }
+        } 
       });
   }
 
