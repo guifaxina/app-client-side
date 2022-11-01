@@ -1,8 +1,10 @@
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+//styles
 import { Card } from "./styles";
 import DeleteIcon from "@mui/icons-material/Delete";
 import PriorityHighIcon from "@mui/icons-material/PriorityHigh";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 type CardProps = {
   name: string;
@@ -15,8 +17,15 @@ type CardProps = {
 
 function ListProducts(props: CardProps) {
   const navigate = useNavigate();
-  const isAdmin = localStorage.getItem("isadmin");
   const token = localStorage.getItem("token");
+
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/user/user-data", {
+      headers: { authorization: `${token}` }}
+      ).then(res => setIsAdmin(res.data.admin))
+  },[])
 
   async function handleDeleteAction(id: string) {
     axios.delete(`http://localhost:3001/admin/delete-product/${id}`, {
@@ -33,7 +42,7 @@ function ListProducts(props: CardProps) {
 
   return (
     <Card onClick={() => handleProductPage(props.id)}>
-      {isAdmin == "true" && (
+      {isAdmin == true && (
         <DeleteIcon
           color="error"
           className="delete-icon"
