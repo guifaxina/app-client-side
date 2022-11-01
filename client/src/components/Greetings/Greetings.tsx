@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import FormInputs from "../Inputs/FormInputs";
 import SignIn from "../SignIn/SignIn";
+//styles
 import { Container } from "./styles";
 
 export function Greetings() {
@@ -70,9 +71,9 @@ export function Greetings() {
 
   let navigate = useNavigate();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const data = new FormData(e.currentTarget);
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
     const userData = Object.fromEntries(data.entries());
     
     await axios.post("http://localhost:3001/user/register", userData).then(res => {
@@ -83,8 +84,8 @@ export function Greetings() {
     });
   };
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValues({ ...values, [event.target.name]: event.target.value });
   };
 
   return (

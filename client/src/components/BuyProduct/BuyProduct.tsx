@@ -14,8 +14,8 @@ export default function BuyProduct(props: any) {
 
   const [isBuyModalOpen, setIsBuyModalOpen] = useState(false);
 
-  function handleUnits(e: React.ChangeEvent<HTMLInputElement>) {
-    setUnits({ ...units, [e.target.name]: e.target.value });
+  function handleUnits(event: React.ChangeEvent<HTMLInputElement>) {
+    setUnits({ ...units, [event.target.name]: event.target.value });
   }
 
   function handleBuyAction() {

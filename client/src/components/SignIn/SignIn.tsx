@@ -13,12 +13,12 @@ function SignIn() {
     password: "",
   });
 
-  function onChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setUserLogin({ ...userLogin, [e.target.type]: e.target.value });
+  function onChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setUserLogin({ ...userLogin, [event.target.type]: event.target.value });
   }
 
-  async function handleLoginSubmit(e: FormEvent<HTMLButtonElement>) {
-    e.preventDefault();
+  async function handleLoginSubmit(event: FormEvent<HTMLButtonElement>) {
+    event.preventDefault();
     await axios
       .post("http://localhost:3001/user/login", userLogin)
       .then((res) => {

@@ -1,7 +1,8 @@
-import { Container, ContainerModal, Content } from "./styles";
 import { useEffect, useState } from "react";
 import Modal from "react-modal";
 import axios from "axios";
+//styles
+import { Container, ContainerModal, Content } from "./styles";
 
 export function HeaderProducts() {
   const token = localStorage.getItem("token");
@@ -23,10 +24,10 @@ export function HeaderProducts() {
     setIsAddNewProductModalOpen(false);
   }
 
-  function handleChangeAddNewProduct(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleChangeAddNewProduct(event: React.ChangeEvent<HTMLInputElement>) {
     setUserDataAddNewProduct({
       ...userDataAddNewProduct,
-      [e.target.name]: e.target.value,
+      [event.target.name]: event.target.value,
     });
   }
 
