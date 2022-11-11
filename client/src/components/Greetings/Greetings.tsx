@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import FormInputs from "../Inputs/FormInputs";
 import SignIn from "../SignIn/SignIn";
@@ -16,7 +16,7 @@ export function Greetings() {
     password: "",
     confirmpassword: "",
   });
-
+   
   const inputs = [
     {
       id: 1,
@@ -73,11 +73,11 @@ export function Greetings() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const userData = Object.fromEntries(data.entries());
     
-    await axios.post("http://localhost:3001/user/register", userData).then(res => {
-      if (res.status == 200) {
+    const data = new FormData(event.currentTarget);
+    const userData = Object.fromEntries(data.entries());    
+    await axios.post(`${import.meta.env.VITE_URL}/user/register`, userData).then(res => {
+      if (res.status == 201) {
         localStorage.setItem("token", res.headers.authorization);
         navigate("/products");
       }
@@ -105,7 +105,7 @@ export function Greetings() {
                 key={input.id}
                 onChange={onChange}
                 {...input}
-                value={values[input.name]}
+                value={values[input.name]}      
               /> 
             );
           })}

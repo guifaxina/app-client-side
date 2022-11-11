@@ -16,11 +16,11 @@ function SignIn() {
   function onChange(event: React.ChangeEvent<HTMLInputElement>) {
     setUserLogin({ ...userLogin, [event.target.type]: event.target.value });
   }
-
+  
   async function handleLoginSubmit(event: FormEvent<HTMLButtonElement>) {
     event.preventDefault();
     await axios
-      .post("http://localhost:3001/user/login", userLogin)
+      .post(`${import.meta.env.VITE_URL}/user/login`, userLogin)
       .then((res) => {
         if (res.status == 200) {
           localStorage.setItem("token", res.headers.authorization);

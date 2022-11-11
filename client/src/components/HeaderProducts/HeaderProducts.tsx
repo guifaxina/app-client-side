@@ -33,7 +33,7 @@ export function HeaderProducts() {
 
   async function handleAddProduct() {
     await axios.post(
-      "http://localhost:3001/admin/add-new-product",
+      `${import.meta.env.VITE_URL}/admin/add-new-product`,
       userDataAddNewProduct,
       {
         headers: {
@@ -50,7 +50,7 @@ export function HeaderProducts() {
   })
 
   useEffect(() => {
-    axios.get("http://localhost:3001/user/user-data", {
+    axios.get(`${import.meta.env.VITE_URL}/user/user-data`, {
       headers: {
         authorization: `${token}`,
       },

@@ -20,7 +20,7 @@ function ProductsPage() {
   useEffect(() => {
     const getProducts = async () => {
       await axios
-        .get("http://localhost:3001/user/get-products")
+        .get(`${import.meta.env.VITE_URL}/user/get-products`)
         .then(res => setProductsList(res.data))
     };
     

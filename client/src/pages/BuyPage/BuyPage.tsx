@@ -25,7 +25,7 @@ function BuyPage() {
     const { id } = state
 
     axios
-      .get("http://localhost:3001/user/select-product", {
+      .get(`${import.meta.env.VITE_URL}/user/select-product`, {
         headers: {
           id: `${id}`,
         },

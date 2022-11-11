@@ -22,13 +22,13 @@ function ListProducts(props: CardProps) {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/user/user-data", {
+    axios.get(`${import.meta.env.VITE_URL}/user/user-data`, {
       headers: { authorization: `${token}` }}
       ).then(res => setIsAdmin(res.data.admin))
   },[])
-
+  
   async function handleDeleteAction(id: string) {
-    axios.delete(`http://localhost:3001/admin/delete-product/${id}`, {
+    axios.delete(`${import.meta.env.VITE_URL}/admin/delete-product/${id}`, {
       headers: {
         authorization: `${token}`,
       },

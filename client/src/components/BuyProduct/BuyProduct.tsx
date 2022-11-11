@@ -19,7 +19,7 @@ export default function BuyProduct(props: any) {
   }
 
   function handleBuyAction() {
-    axios.patch("http://localhost:3001/user/buy", units);
+    axios.patch(`${import.meta.env.VITE_URL}/user/buy`, units);
     setIsBuyModalOpen(true);
   }
 
