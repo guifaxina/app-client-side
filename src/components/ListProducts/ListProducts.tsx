@@ -43,7 +43,7 @@ function ListProducts(props: CardProps) {
   }
 
   return (
-    <Card >
+    <Card onClick={() => handleProductPage(props.id)}>
       {isAdmin == true && (
         <DeleteIcon
           color="error"
@@ -55,7 +55,7 @@ function ListProducts(props: CardProps) {
         />
       )}
 
-      <div className="img-wrapper" onClick={() => handleProductPage(props.id)}>
+      <div className="img-wrapper">
         <img src={props.link} alt="" className="img" />
       </div>
       <h3>{props.name}</h3>
