@@ -35,12 +35,8 @@ export function HeaderProducts() {
     await axios.post(
       `${import.meta.env.VITE_URL}/admin/add-new-product`,
       userDataAddNewProduct,
-      {
-        headers: {
-          authorization: `${token}`,
-        },
-      }
-    ).then(res => () => {
+      { headers: { authorization: `${token}` }}
+    ).then(res => {
       if (res.status == 201) window.location.reload();
       else console.log("Something went wrong...");
     })
@@ -54,10 +50,8 @@ export function HeaderProducts() {
 
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_URL}/user/user-data`, {
-      headers: {
-        authorization: `${token}`,
-      },
-    }).then(res => setUserData(res.data))
+      headers: { authorization: `${token}` }}
+      ).then(res => setUserData(res.data))
   }, []);
 
   return (

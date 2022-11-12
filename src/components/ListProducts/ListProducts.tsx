@@ -29,10 +29,8 @@ function ListProducts(props: CardProps) {
   
   async function handleDeleteAction(id: string) {
     axios.delete(`${import.meta.env.VITE_URL}/admin/delete-product/${id}`, {
-      headers: {
-        authorization: `${token}`,
-      },
-    }).then(res => () => {
+      headers: { authorization: `${token}` }}
+      ).then(res => {
       if (res.status == 200) window.location.reload();
       else console.log("Something went wrong...");
     })
@@ -43,7 +41,7 @@ function ListProducts(props: CardProps) {
   }
 
   return (
-    <Card onClick={() => handleProductPage(props.id)}>
+    <Card>
       {isAdmin == true && (
         <DeleteIcon
           color="error"
@@ -56,7 +54,7 @@ function ListProducts(props: CardProps) {
       )}
 
       <div className="img-wrapper">
-        <img src={props.link} alt="" className="img" />
+        <img src={props.link} alt="" className="img" onClick={() => handleProductPage(props.id)}/>
       </div>
       <h3>{props.name}</h3>
       <span className="price">R$ {props.price}</span>
