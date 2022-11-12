@@ -40,7 +40,10 @@ export function HeaderProducts() {
           authorization: `${token}`,
         },
       }
-    );
+    ).then(res => () => {
+      if (res.status == 201) window.location.reload();
+      else console.log("Something went wrong...");
+    })
   }
 
   const [ userData, setUserData ] = useState({
