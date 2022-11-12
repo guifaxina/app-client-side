@@ -32,8 +32,10 @@ function ListProducts(props: CardProps) {
       headers: {
         authorization: `${token}`,
       },
-    });
-    window.location.reload();
+    }).then(res => () => {
+      if (res.status == 200) window.location.reload();
+      else console.log("Something went wrong...");
+    })
   }
 
   function handleProductPage(id: string) {
