@@ -141,7 +141,7 @@ export function Greetings() {
             {registerErrorMessage.map(item => 
                 <li key={item}>
                   <strong>
-                    {item.charAt(0).toUpperCase() + item.slice(1) + " is required."}
+                    {item.charAt(0).toUpperCase() + item.slice(1)}
                   </strong>
                 </li>)}
           </ul>
